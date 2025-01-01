@@ -1,4 +1,4 @@
-// file position on text mode (type 2)
+// file position on text mode (type 3)
 
 // libc-test by TcbnErik
 // Last-modified: 2025-01-02
@@ -8,12 +8,16 @@
 // notice and this notice are preserved.  This file is offered as-is,
 // without any warranty.
 
+// This test passes with LIBC but fails with MSVC.
+// https://developercommunity.visualstudio.com/t/425878
+//   Fseek & ftell fail in text mode for unix style text files
+
 #include <stdio.h>
 
 int main(void) {
-  const char file[] = "test2.txt";
+  const char file[] = "test3.txt";
 
-  FILE* fp = fopen(file, "wt");
+  FILE* fp = fopen(file, "wb");
   if (!fp) return 1;
   fputs("a\nb\n", fp);
   fclose(fp);
