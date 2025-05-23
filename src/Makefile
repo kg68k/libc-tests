@@ -12,13 +12,16 @@ MKDIR_P	= mkdir -p
 .PHONY: all directories clean
 
 
-TARGET = readdir.x textmode.x textmode2.x textmode3.x envp.x
+TARGET = readdir.x textmode.x textmode2.x textmode3.x envp.x tz.x
 GENERATED_FILES = textmode.txt test2.txt test3.txt
 
 all: $(TARGET)
 
 %.x: %.c
 	$(CC) $(CFLAGS) -o $@ $^
+
+tz.x: tz.c
+	$(CC) $(CFLAGS) -o $@ $^ -ltz
 
 
 clean:
