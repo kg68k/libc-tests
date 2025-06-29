@@ -12,7 +12,7 @@ MKDIR_P	= mkdir -p
 .PHONY: all directories clean
 
 
-TARGET = readdir.x textmode.x textmode2.x textmode3.x envp.x tz.x
+TARGET = envp.x getrlimit.x readdir.x textmode.x textmode2.x textmode3.x tz.x
 GENERATED_FILES = textmode.txt test2.txt test3.txt
 
 all: $(TARGET)
